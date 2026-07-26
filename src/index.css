@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  background: #F5F6F1;
+  color: #132625;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.font-display {
+  font-family: 'Fraunces', serif;
+  font-feature-settings: 'ss01' on;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* subtle woven-paper texture on the page background, kept quiet */
+.paper-texture {
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(19,38,37,0.035) 1px, transparent 0);
+  background-size: 18px 18px;
+}
+
+@layer components {
+  .input {
+    @apply w-full border border-line rounded-sm px-3 py-2 text-sm focus:border-teal-600 outline-none bg-paper;
+  }
+}
+
+::selection {
+  background: #B8892B;
+  color: #F5F6F1;
+}
+
+:focus-visible {
+  outline: 2px solid #0F3D3E;
+  outline-offset: 2px;
+}
