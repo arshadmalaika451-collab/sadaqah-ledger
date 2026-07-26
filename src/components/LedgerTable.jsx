@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const fmt = (n) =>
   new Intl.NumberFormat('en-PK', { maximumFractionDigits: 0 }).format(n)
 
 export default function LedgerTable({ entries }) {
+  const [previewImage, setPreviewImage] = useState(null)
+
   if (!entries.length) {
     return (
       <div className="py-12 text-center text-ink/40 text-sm">
@@ -56,14 +58,13 @@ export default function LedgerTable({ entries }) {
               </td>
               <td className="py-2.5 pr-4">
                 {e.receiptImage ? (
-                  <a
-                    href={e.receiptImage}
-                    target="_blank"
-                    rel="noreferrer"
+                  <button
+                    type="button"
+                    onClick={() => setPreviewImage(e.receiptImage)}
                     className="text-brass-600 underline underline-offset-2 hover:text-brass-400"
                   >
                     View
-                  </a>
+                  </button>
                 ) : (
                   <span className="text-ink/25">—</span>
                 )}
@@ -72,6 +73,24 @@ export default function LedgerTable({ entries }) {
           ))}
         </tbody>
       </table>
+
+      {previewImage && (
+        <div
+          className="fixed inset-0 bg-ink/70 flex items-center justify-center p-6 z-50"
+          onClick={() => setPreviewImage(null)}
+        >
+          <div className="bg-panel rounded-md p-4 max-w-2xl max-h-[85vh] overflow-auto">
+            <img src={previewImage} alt="Receipt" className="max-w-full rounded-sm" />
+            <button
+              type="button"
+              onClick={() => setPreviewImage(null)}
+              className="mt-3 w-full text-sm bg-teal-600 hover:bg-teal-400 text-paper py-2 rounded-sm transition-colors"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
