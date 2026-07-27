@@ -65,10 +65,10 @@ a restatement of real numbers, not a guess.
 
 ## f. Screenshots
 
-![Public dashboard](screenshots/screenshot1.png)
-![AI summary generated](screenshots/screenshot2.png)
-![Verify ledger integrity](screenshots/screenshot3.png)
-![Committee admin panel](screenshots/screenshot4.png)
+![Billing dashboard](screenshots/billing.jpeg)
+![App screenshot](screenshots/image.png)
+![Ledger integrity verification](screenshots/ledger%20integrity.png)
+![Logs screen](screenshots/logs%20screen.jpeg)
 
 ## g. How to run this project
 
