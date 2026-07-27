@@ -4,7 +4,7 @@ import { computeNextHash } from '../utils/hashChain.js'
 
 // Simple shared-password gate. Fine for a committee-scale MVP — for a real
 // deployment with several members, swap this for Supabase Auth.
-const COMMITTEE_PASSWORD = 'change-me-before-you-deploy'
+const COMMITTEE_PASSWORD = 'MasjidChanda2026'
 
 export default function AdminPanel() {
   const [unlocked, setUnlocked] = useState(false)

@@ -51,7 +51,8 @@ ledger data, never invented) to Google's Gemini model, which writes a 3–4
 sentence plain-language notice — e.g. how much came in, how much went out,
 what it was mostly spent on, and the resulting change in balance.
 
-**System prompt used** (see `api/summary.js`):The model only ever receives already-aggregated totals (never raw donor
+**System prompt used** (see `api/summary.js`):
+The model only ever receives already-aggregated totals (never raw donor
 names), and the prompt explicitly forbids inventing figures — the summary is
 a restatement of real numbers, not a guess.
 
@@ -87,6 +88,8 @@ Open `http://localhost:5173` for the public view, and
 `http://localhost:5173/#admin` for the committee panel
 (default password is set in `src/components/AdminPanel.jsx` — change it
 before you deploy).
+
+**For testing/grading:** committee sign-in password is `MasjidChanda2026`
 
 ## Author
 
