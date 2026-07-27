@@ -1,9 +1,5 @@
 # Sadaqah Ledger — Mosque/Community Fund Transparency Tracker
 
-> ⚠️ **Before you submit:** replace every `TODO` below with your real details —
-> live URL, screenshots, your name, your GitHub username. A README full of
-> TODOs will be graded as an unfinished report.
-
 ## a. What it does, and for whom
 
 Most mosque and community donation ("chanda") funds are managed on paper or in
@@ -23,7 +19,7 @@ remove all doubt about where the money went.
 
 ## b. Live URL
 
-🔗 **TODO: paste your live Vercel URL here** (e.g. `https://sadaqah-ledger.vercel.app`)
+🔗 **Live URL:** https://sadaqah-ledger.vercel.app
 
 Public ledger: the URL above.
 Committee entry form: same URL + `#admin` (e.g. `https://sadaqah-ledger.vercel.app/#admin`)
@@ -55,18 +51,7 @@ ledger data, never invented) to Google's Gemini model, which writes a 3–4
 sentence plain-language notice — e.g. how much came in, how much went out,
 what it was mostly spent on, and the resulting change in balance.
 
-**System prompt used** (see `api/summary.js`):
-
-```
-You are a financial transparency assistant for a mosque/community fund.
-Given this month's donations and expenses data (JSON), write a clear, honest,
-3-4 sentence summary in simple language for community members. Mention total
-donations, total expenses, the top expense category, and the resulting
-balance change. Do not invent numbers — use only the data provided. Write in
-a warm but neutral, factual tone, in English.
-```
-
-The model only ever receives already-aggregated totals (never raw donor
+**System prompt used** (see `api/summary.js`):The model only ever receives already-aggregated totals (never raw donor
 names), and the prompt explicitly forbids inventing figures — the summary is
 a restatement of real numbers, not a guess.
 
@@ -75,30 +60,26 @@ a restatement of real numbers, not a guess.
 - **Frontend:** React + Vite, Tailwind CSS
 - **Database:** Supabase (Postgres, real-time, free tier — no billing card required)
 - **Hosting:** Vercel (also runs the serverless AI function)
-- **AI model:** Google Gemini 2.0 Flash, via Google AI Studio API key
+- **AI model:** Google Gemini (`gemini-flash-latest`), via Google AI Studio API key
 - **Hashing:** Web Crypto API (SHA-256), built into the browser — no extra library
 
 ## f. Screenshots
 
-**TODO: add at least 3 screenshots here**, e.g.:
-
-```
-![Public dashboard](screenshots/public-dashboard.png)
-![Committee entry form](screenshots/admin-form.png)
-![Ledger verification](screenshots/verify-ledger.png)
-```
-(Put the actual image files in a `screenshots/` folder in this repo.)
+![Public dashboard](screenshots/screenshot1.png)
+![AI summary generated](screenshots/screenshot2.png)
+![Verify ledger integrity](screenshots/screenshot3.png)
+![Committee admin panel](screenshots/screenshot4.png)
 
 ## g. How to run this project
 
-Full step-by-step instructions (Firebase setup, Gemini key, local run, GitHub,
+Full step-by-step instructions (Supabase setup, Gemini key, local run, GitHub,
 Vercel deploy) are in **[SETUP_GUIDE.md](./SETUP_GUIDE.md)**.
 
-Quick version, once you have a Firebase project and a Gemini key:
+Quick version, once you have a Supabase project and a Gemini key:
 
 ```bash
 npm install
-cp .env.example .env   # fill in your Firebase values
+cp .env.example .env   # fill in your Supabase and Gemini values
 npm run dev
 ```
 
@@ -109,4 +90,5 @@ before you deploy).
 
 ## Author
 
-TODO: your name, batch (Batch 1 / Batch 2), and a link to this repo.
+Malaika Arshad — ACT AI Program (Batch 2)
+Repo: https://github.com/arshadmalaika451-collab/sadaqah-ledger
